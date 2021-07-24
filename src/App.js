@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router";
+import Home from "./Components/Home";
+import Floors from "./Components/Floors";
+import FloorDetail from "./Components/FloorDetail";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        {/* Arrange <Route /> from longest path url to the lowest  */}
+        <Route path="/malls/:mall_ID/:floor_ID">
+          <FloorDetail />
+        </Route>
+        <Route path="/malls/:mall_ID">
+          <Floors />
+        </Route>
+        <Route path="/malls">
+          <Home malls={[]} />
+        </Route>
+
+        <Redirect to="/malls" />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
