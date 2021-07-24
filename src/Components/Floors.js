@@ -16,7 +16,7 @@ const Floors = () => {
         marginTop: "20%",
       }}
     >
-      <div>This is Floors page</div>
+      <div>This page contains all Floors of mall id:{mall_ID}</div>
       <Link className="btn btn-primary" to={`${current_url}/${floor_ID}`}>
         detail page
       </Link>

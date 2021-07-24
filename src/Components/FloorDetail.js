@@ -13,7 +13,7 @@ const FloorDetail = () => {
         marginTop: "20%",
       }}
     >
-      <div>This is detail page</div>
+      <div>This page contains the detail of floor id: {floor_ID}</div>
     </div>
   );
 };
